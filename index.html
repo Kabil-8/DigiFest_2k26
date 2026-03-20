@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigiFest 2k26 · symposium</title>
-  <link rel="icon" type="image/png" href="https://via.placeholder.com/32/00d4ff/000000?text=DF" />
+  <title>DigiFest 2k26 </title>
+  <link rel="icon" type="image/png" href="logo1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
@@ -616,6 +616,21 @@
       letter-spacing: 0.2em;
       color: rgba(255, 255, 255, 0.3);
       text-transform: uppercase;
+      overflow: hidden;
+      padding: 0;
+      border-radius: 6px;
+    }
+
+    .event-poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .event-card:hover .event-poster img {
+      transform: scale(1.05);
     }
 
     .card-type {
@@ -1518,6 +1533,25 @@
         padding: 12px 24px
       }
 
+      .event-poster {
+        width: 100%;
+        height: 180px;
+        /* fixed height */
+        overflow: hidden;
+        /* crop extra image */
+        border-radius: 12px;
+        background: #0a0f1a;
+        /* fallback */
+      }
+
+      .event-poster img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* 🔥 IMPORTANT: crops nicely */
+        display: block;
+      }
+
       .nav-links {
         display: none
       }
@@ -1632,7 +1666,7 @@
           <div class="hero-stat-label">Events</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">₹15+K</div>
+          <div class="hero-stat-val">₹15K+</div>
           <div class="hero-stat-label">Prize Pool</div>
         </div>
         <div class="hero-stat">
@@ -1660,7 +1694,9 @@
       <!-- Poster Plus (tech) -->
       <div class="event-card fade-in" onclick="openModal('posterplus')">
         <div class="card-badge">CASH PRIZE</div>
-        <div class="event-poster">📰</div>
+        <div class="event-poster">
+          <img src="Poster1.jpeg" alt="Poster Plus">
+        </div>
         <div class="card-type">Technical</div>
         <div class="card-name">Poster Plus</div>
         <div class="coordinator-info">Samyuktha S, Raga Swetha, Sanjay</div>
@@ -1675,7 +1711,7 @@
       <!-- WebNova (tech) -->
       <div class="event-card fade-in" onclick="openModal('webnova')">
         <div class="card-badge">CASH PRIZE</div>
-        <div class="event-poster">🌐</div>
+        <div class="event-poster"><img src="Web1.jpeg" alt="WebNova"></div>
         <div class="card-type">Technical</div>
         <div class="card-name">WebNova</div>
         <div class="coordinator-info">Santharam, Priya Dharshini, Vignesh</div>
@@ -1690,7 +1726,7 @@
       <!-- Compile & Code (tech) -->
       <div class="event-card fade-in" onclick="openModal('compile')">
         <div class="card-badge">CASH PRIZE</div>
-        <div class="event-poster">⚙️</div>
+        <div class="event-poster"><img src="Compiler1.jpeg" alt="Compile &amp; Code"></div>
         <div class="card-type">Technical</div>
         <div class="card-name">Compile & Code</div>
         <div class="coordinator-info">Pavithra S, Kamalika, Hari Lokesh</div>
@@ -1709,10 +1745,10 @@
       <!-- Idea Wins (non-tech) -->
       <div class="event-card pink-card fade-in" onclick="openModal('ideawins')">
         <div class="card-badge">CASH PRIZE</div>
-        <div class="event-poster">💡</div>
+        <div class="event-poster"><img src="IdeaScape1.jpeg" alt="IdeaScape"></div>
         <div class="card-type">Non‑Technical</div>
-        <div class="card-name">Idea Wins</div>
-        <div class="coordinator-info">Kannan, Dinesh Babu, Jena</div>
+        <div class="card-name">IdeaScape</div>
+        <div class="coordinator-info">Kannan, Dinesh Babu, Pavithra J</div>
         <div class="card-desc">Movie clues, puzzles & teamwork – decode & win.</div>
         <div class="card-prizes">
           <div class="card-prize"><span>🥇 1st</span> <span>₹1500</span></div>
@@ -1721,13 +1757,13 @@
         </div>
         <button class="card-btn">View Details</button>
       </div>
-      <!-- IPL Mock Auction (non-tech) -->
+      <!-- Playing 11 (non-tech) -->
       <div class="event-card pink-card fade-in" onclick="openModal('ipl')">
         <div class="card-badge">CASH PRIZE</div>
-        <div class="event-poster">🏏</div>
+        <div class="event-poster"><img src="Ipl1.jpeg" alt="Playing 11"></div>
         <div class="card-type">Non‑Technical</div>
-        <div class="card-name">IPL Mock Auction</div>
-        <div class="coordinator-info">Tarun, Pavithra J</div>
+        <div class="card-name">Playing 11</div>
+        <div class="coordinator-info">Tarun,Deepsika Shree, Jena</div>
         <div class="card-desc">IPL‑style auction: bid for characters & build your dream squad.</div>
         <div class="card-prizes">
           <div class="card-prize"><span>🥇 1st</span> <span>₹1500</span></div>
@@ -1820,18 +1856,7 @@
       </div>
       <div class="schedule-item fade-in">
         <div class="sched-time">
-          <div class="sched-time-val">09.15 AM</div>
-        </div>
-        <div class="sched-node"></div>
-        <div class="sched-content">
-          <div class="sched-name">Poster Plus Begins</div>
-          <div class="sched-desc">Participants display and present their research posters to judges.</div>
-          <div class="sched-tag">Technical</div>
-        </div>
-      </div>
-      <div class="schedule-item fade-in">
-        <div class="sched-time">
-          <div class="sched-time-val">09:30 AM</div>
+          <div class="sched-time-val">09:00 AM - Project Lab [C436]</div>
         </div>
         <div class="sched-node"></div>
         <div class="sched-content">
@@ -1843,11 +1868,11 @@
       </div>
       <div class="schedule-item fade-in">
         <div class="sched-time">
-          <div class="sched-time-val">09:30 PM</div>
+          <div class="sched-time-val">09:00 PM - Mechanical Seminar Hall</div>
         </div>
         <div class="sched-node"></div>
         <div class="sched-content">
-          <div class="sched-name">IPL Mock Auction</div>
+          <div class="sched-name">Playing 11</div>
           <div class="sched-desc">Epic auction event. Teams bid for characters with a fixed budget and compete for the
             best squad.</div>
           <div class="sched-tag">Non-Technical</div>
@@ -1855,7 +1880,7 @@
       </div>
       <div class="schedule-item fade-in">
         <div class="sched-time">
-          <div class="sched-time-val">01:30 PM</div>
+          <div class="sched-time-val">11:00 PM - C127</div>
         </div>
         <div class="sched-node"></div>
         <div class="sched-content">
@@ -1866,11 +1891,22 @@
       </div>
       <div class="schedule-item fade-in">
         <div class="sched-time">
-          <div class="sched-time-val">01:30 PM</div>
+          <div class="sched-time-val">01.30 AM - Mechanical Seminar Hall</div>
         </div>
         <div class="sched-node"></div>
         <div class="sched-content">
-          <div class="sched-name">Idea Wins</div>
+          <div class="sched-name">Poster Plus Begins</div>
+          <div class="sched-desc">Participants display and present their research posters to judges.</div>
+          <div class="sched-tag">Technical</div>
+        </div>
+      </div>
+      <div class="schedule-item fade-in">
+        <div class="sched-time">
+          <div class="sched-time-val">01:30 PM - A403</div>
+        </div>
+        <div class="sched-node"></div>
+        <div class="sched-content">
+          <div class="sched-name">IdeaScape</div>
           <div class="sched-desc">Teams pitch their most ridiculous startup ideas. Judges score on chaos and creativity.
           </div>
           <div class="sched-tag">Non-Technical</div>
@@ -1897,7 +1933,7 @@
     <div class="contact-grid">
       <div class="contact-card fade-in">
         <div class="contact-role">3rd Year</div>
-        <div class="contact-name">Santhosh & Sowmiya</div>
+        <div class="contact-name">Santhosh Gunal & Sowmiya</div>
         <div class="contact-info">
           <div>📱 +91 90803 33745</div>
           <div>📱 +91 81226 06343</div>
@@ -1905,8 +1941,9 @@
       </div>
       <div class="contact-card fade-in">
         <div class="contact-role">2nd Year</div>
-        <div class="contact-name">Kavipriya</div>
+        <div class="contact-name">Sriananth & Kavipriya</div>
         <div class="contact-info">
+          <div>📱 +91 81221 08172</div>
           <div>📱 +91 86674 52487</div>
 
         </div>
@@ -1939,7 +1976,7 @@
           <li><a href="#events">Poster Plus</a></li>
           <li><a href="#events">WebNova</a></li>
           <li><a href="#events">Compile & Code</a></li>
-          <li><a href="#events">Idea Wins</a></li>
+          <li><a href="#events">IdeaScape</a></li>
           <li><a href="#events">IPL Auction</a></li>
         </ul>
       </div>
@@ -2076,52 +2113,164 @@
     // ===== MODAL DATA (updated with correct descriptions, coordinators, prizes) =====
     const MODALS = {
       posterplus: {
-        title: 'Poster Plus', subtitle: 'Technical · Cash Prize',
+        title: 'Poster Plus',
+        subtitle: 'Technical · Cash Prize',
+        image: 'Poster.jpeg',
         coordinators: 'Samyuktha S, Raga Swetha, Sanjay',
-        rules: ['Create an A1/A2 size research poster', 'Must include abstract, methodology, results', 'Judged by faculty panel', 'Individual or team of 2'],
+        rules: [
+          'Create an A3/A4 size research poster',
+          'Must include abstract, methodology, results',
+          'Judged by faculty panel'
+        ],
         team: '2 members',
-        prizes: [{ label: '🥇 First Prize', amt: '₹1500' }, { label: '🥈 Second Prize', amt: '₹1000' }, { label: '🥉 Third Prize', amt: '₹750' }]
+        prizes: [
+          { label: '🥇 First Prize', amt: '₹1500' },
+          { label: '🥈 Second Prize', amt: '₹1000' },
+          { label: '🥉 Third Prize', amt: '₹750' }
+        ],
+        formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfOm4RIDwahcpl6navmBMsLezzkUFdBqYQSt76y4ElwKbPUsQ/viewform'
       },
+
       webnova: {
-        title: 'WebNova', subtitle: 'Technical · Cash Prize',
+        title: 'WebNova',
+        subtitle: 'Technical · Cash Prize',
+        image: 'Web.jpeg',
         coordinators: 'Santharam, Priya Dharshini, Vignesh',
-        rules: ['Theme revealed on event day', 'Build a website within 2 hours', 'Any frontend framework allowed', 'Must be responsive and deployed'],
+        rules: [
+          'Theme revealed on event day',
+          'Build a website within 2 hours',
+          'Any frontend framework allowed',
+          'Must be responsive and deployed'
+        ],
         team: '2 members',
-        prizes: [{ label: '🥇 First Prize', amt: '₹1500' }, { label: '🥈 Second Prize', amt: '₹1000' }, { label: '🥉 Third Prize', amt: '₹750' }]
+        prizes: [
+          { label: '🥇 First Prize', amt: '₹1500' },
+          { label: '🥈 Second Prize', amt: '₹1000' },
+          { label: '🥉 Third Prize', amt: '₹750' }
+        ],
+        formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSd4DjIMMJPuW7ypAAh4ZStgT0JvGTZDXUXNBuEMtkG_leloDw/viewform'
       },
+
       compile: {
-        title: 'Compile & Code', subtitle: 'Technical · Cash Prize',
+        title: 'Compile & Code',
+        subtitle: 'Technical · Cash Prize',
+        image: 'Compiler.jpeg',
         coordinators: 'Pavithra S, Kamalika, Hari Lokesh',
-        rules: ['Multiple rounds: MCQ, debugging, coding', 'Languages: C, C++, Java, Python', 'No internet access during event', 'Time-based scoring'],
+        rules: [
+          'Multiple rounds: Debugging & Coding',
+          'Languages: C, C++, Java, Python',
+          'No internet access during event',
+          'Time-based scoring'
+        ],
         team: 'Individual',
-        prizes: [{ label: '🥇 First Prize', amt: '₹1500' }, { label: '🥈 Second Prize', amt: '₹1000' }, { label: '🥉 Third Prize', amt: '₹750' }]
+        prizes: [
+          { label: '🥇 First Prize', amt: '₹1500' },
+          { label: '🥈 Second Prize', amt: '₹1000' },
+          { label: '🥉 Third Prize', amt: '₹750' }
+        ],
+        formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdDBDDCArXJ_v_R-hKpFT-9kaw7kpTIS9VJAF6S7UboDGGqvw/viewform'
       },
+
       ideawins: {
-        title: 'Idea Wins', subtitle: 'Non-Technical · Cash Prize',
+        title: 'IdeaScape',
+        subtitle: 'Non-Technical · Cash Prize',
+        image: 'IdeaScape.jpeg',
         coordinators: 'Kannan, Dinesh Babu, Jena',
-        rules: ['Movie-based clues, puzzles and thrilling rounds', 'Teams decode and race to final challenge', 'Judged on teamwork & quick thinking', 'Max 3 members per team'],
+        rules: [
+          'Movie-based clues, puzzles and thrilling rounds',
+          'Teams decode and race to final challenge',
+          'Judged on teamwork & quick thinking',
+          'Max 2 members per team'
+        ],
         team: '2 members',
-        prizes: [{ label: '🥇 First Prize', amt: '₹1500' }, { label: '🥈 Second Prize', amt: '₹1000' }, { label: '🥉 Third Prize', amt: '₹750' }]
+        prizes: [
+          { label: '🥇 First Prize', amt: '₹1500' },
+          { label: '🥈 Second Prize', amt: '₹1000' },
+          { label: '🥉 Third Prize', amt: '₹750' }
+        ],
+        formLink: 'https://docs.google.com/forms/d/e/1FAIpQLScY_4C9AIfxMLFMUCTdbmgAW-MYOMZ3hBni8FtHsCq1nHt1Tw/viewform'
       },
+
       ipl: {
-        title: 'IPL Mock Auction', subtitle: 'Non-Technical · Cash Prize',
+        title: 'Playing 11',
+        subtitle: 'Non-Technical · Cash Prize',
+        image: 'Ipl.jpeg',
         coordinators: 'Tarun, Pavithra J',
-        rules: ['Round 1: IPL quiz (20 questions) – top 8-9 qualify', 'Round 2: Mock auction with virtual budget (offline backup)', 'Bid for characters from movies, anime, games, pop culture', 'Best squad wins based on strategy & composition'],
+        rules: [
+          'Round 1: Cric-quiz (20 questions) – top 8 qualify',
+          'Round 2: Mock auction',
+          'Bid for IPL culture',
+          'Best squad wins based on strategy & composition'
+        ],
         team: '5 members',
-        prizes: [{ label: '🥇 First Prize', amt: '₹1500' }, { label: '🥈 Second Prize', amt: '₹1000' }, { label: '🥉 Third Prize', amt: '₹750' }]
+        prizes: [
+          { label: '🥇 First Prize', amt: '₹1500' },
+          { label: '🥈 Second Prize', amt: '₹1000' },
+          { label: '🥉 Third Prize', amt: '₹750' }
+        ],
+        formLink: 'https://docs.google.com/forms/d/e/1FAIpQLScHDxBauoADCCew1QRXeGInY6c3zvPmlffEuyM9H7DypNrtfA/viewform'
       }
     };
 
     function openModal(key) {
-      const d = MODALS[key]; if (!d) return;
+      const d = MODALS[key];
+      if (!d) return;
+
       document.getElementById('modal-title').textContent = d.title;
       document.getElementById('modal-subtitle').textContent = d.subtitle;
-      let html = `<div style="margin-bottom:24px"><div class="modal-info-item"><div class="modal-info-label">Team Size</div><div class="modal-info-val">${d.team}</div></div></div>`;
-      html += `<div class="modal-section"><div class="modal-section-title">Coordinators</div><p style="color:var(--neon-blue);">${d.coordinators}</p></div>`;
-      html += `<div class="modal-section"><div class="modal-section-title">Rules & Guidelines</div><ul class="modal-list">${d.rules.map(r => `<li>${r}</li>`).join('')}</ul></div>`;
-      html += `<div class="modal-section"><div class="modal-section-title">Prizes</div><div class="modal-prizes">`;
-      d.prizes.forEach((p, i) => { let cls = i === 0 ? '' : (i === 1 ? ' silver' : ' bronze'); html += `<div class="modal-prize-item${cls}"><span class="prize-rank${cls}">${p.label}</span><span class="prize-amount${cls}">${p.amt}</span></div>`; });
-      html += `</div></div><a href="#" target="_blank" class="modal-register-btn" onclick="alert('Google Form link will be added here.')">Register via Google Form</a>`;
+
+      let html = ''; // ✅ declare first
+
+      // ✅ IMAGE (TOP)
+      if (d.image) {
+        html += `<div style="text-align:center; margin-bottom:20px;">
+      <img src="${d.image}" alt="${d.title}" 
+      style="max-width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,255,255,0.3);">
+    </div>`;
+      }
+
+      // ✅ TEAM INFO
+      html += `<div style="margin-bottom:24px">
+    <div class="modal-info-item">
+      <div class="modal-info-label">Team Size</div>
+      <div class="modal-info-val">${d.team}</div>
+    </div>
+  </div>`;
+
+      // ✅ COORDINATORS
+      html += `<div class="modal-section">
+    <div class="modal-section-title">Coordinators</div>
+    <p style="color:var(--neon-blue);">${d.coordinators}</p>
+  </div>`;
+
+      // ✅ RULES
+      html += `<div class="modal-section">
+    <div class="modal-section-title">Rules & Guidelines</div>
+    <ul class="modal-list">
+      ${d.rules.map(r => `<li>${r}</li>`).join('')}
+    </ul>
+  </div>`;
+
+      // ✅ PRIZES
+      html += `<div class="modal-section">
+    <div class="modal-section-title">Prizes</div>
+    <div class="modal-prizes">`;
+
+      d.prizes.forEach((p, i) => {
+        let cls = i === 0 ? '' : (i === 1 ? ' silver' : ' bronze');
+        html += `<div class="modal-prize-item${cls}">
+      <span class="prize-rank${cls}">${p.label}</span>
+      <span class="prize-amount${cls}">${p.amt}</span>
+    </div>`;
+      });
+
+      html += `</div></div>`;
+
+      // ✅ REGISTER BUTTON
+      html += `<a href="${d.formLink}" target="_blank" class="modal-register-btn" onclick="closeModal()">
+    Register via Google Form
+  </a>`;
+
       document.getElementById('modal-body').innerHTML = html;
       document.getElementById('modal-overlay').classList.add('active');
       document.body.style.overflow = 'hidden';
